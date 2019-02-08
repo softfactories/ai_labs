@@ -7,6 +7,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ComputerVision", "ComputerV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureAnalyzer", "PictureAnalyzer\PictureAnalyzer.csproj", "{5EE3D939-8F56-43F6-A661-A657EFFEB2F5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET", ".NET", "{FCC7047B-2672-4CB3-B970-0236C683F9FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Python", "Python", "{C93B62BE-1E1D-4EB5-947F-D639D84C8C25}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PictureAnalyzerPy", "PictureAnalyzerPy\PictureAnalyzerPy.pyproj", "{FD346A52-088E-4E88-AC1E-19C8B15389FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +23,17 @@ Global
 		{5EE3D939-8F56-43F6-A661-A657EFFEB2F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EE3D939-8F56-43F6-A661-A657EFFEB2F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EE3D939-8F56-43F6-A661-A657EFFEB2F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD346A52-088E-4E88-AC1E-19C8B15389FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD346A52-088E-4E88-AC1E-19C8B15389FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5EE3D939-8F56-43F6-A661-A657EFFEB2F5} = {22A5EE50-0F5A-4772-B94E-A9B3371C6C03}
+		{5EE3D939-8F56-43F6-A661-A657EFFEB2F5} = {FCC7047B-2672-4CB3-B970-0236C683F9FE}
+		{FCC7047B-2672-4CB3-B970-0236C683F9FE} = {22A5EE50-0F5A-4772-B94E-A9B3371C6C03}
+		{C93B62BE-1E1D-4EB5-947F-D639D84C8C25} = {22A5EE50-0F5A-4772-B94E-A9B3371C6C03}
+		{FD346A52-088E-4E88-AC1E-19C8B15389FE} = {C93B62BE-1E1D-4EB5-947F-D639D84C8C25}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FB83572D-D13C-435F-9BF6-DD6DF2F26FBB}
