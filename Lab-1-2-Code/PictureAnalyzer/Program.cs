@@ -9,29 +9,26 @@ namespace sf.services.cognitive.vision
 {
     static class Program
     {
-        // TODO: IMPORTANT! Replace <API-Key> with your valid subscription key.
+        // TODO: (1) IMPORTANT! Replace <API-Key> with your valid subscription key.
         const string subscriptionKey = "<API-Key>";
 
 
         const string uriCommon = ".api.cognitive.microsoft.com";
         const string uriVisionAnalyzeSuffix = "/vision/v2.0/analyze";
 
-        const string uriAzureRegionWestcentralus = "westcentralus";
-        const string uriAzureRegionEastus = "eastus";
-        const string uriAzureRegionTrial = uriAzureRegionWestcentralus;
-
-
         // You must use the same Azure region in your REST API method as you used to
         // get your subscription keys. For example, if you got your subscription keys
-        // from the West US region, replace "westcentralus" in the URL
-        // below with "westus".
+        // from the East US region, replace "westcentralus" in the URL
+        // below with "eastus".
         //
-        // Free trial subscription keys are generated in the "westus" region.
+        // Free trial subscription keys are generated in the "westcentralus" region.
         // If you use a free trial subscription key, you shouldn't need to change
         // this region.
-        
-        // TODO: assign actual azure region here:
-        const string uriAzureRegion = uriAzureRegionTrial; 
+
+        // TODO: (2) assign actual azure region here:
+        const string uriAzureRegion = "westcentralus";
+        // const string uriAzureRegion = "eastus";
+        // ... etc.
 
         const string uriBase = "https://" + uriAzureRegion + uriCommon + uriVisionAnalyzeSuffix;
 
