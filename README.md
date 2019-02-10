@@ -28,7 +28,7 @@ This repo contains sample lab-projects for the Course - ["AI, Machine and DeepLe
    If you use a free trial subscription key, you shouldn't need to change
    this region.
 
- 3. Further Informations and Details see on the Lab PowerPoint slides and on [Documentation of Azure Cognitive Services](https://docs.microsoft.com/de-de/azure/cognitive-services/)
+ 3. Further Informations and Details see on the Lab PowerPoint slides and [Documentation of Azure Cognitive Services](https://docs.microsoft.com/de-de/azure/cognitive-services/)
 
 
 
