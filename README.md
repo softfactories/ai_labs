@@ -28,6 +28,8 @@ This repo contains sample lab-projects for the Course - ["AI, Machine and DeepLe
    If you use a free trial subscription key, you shouldn't need to change
    this region.
 
+ 3. Further Informations and Details see on the Lab PowerPoint slides and [Microsft Document Website for Azure Cognitive Services](https://docs.microsoft.com/de-de/azure/cognitive-services/)
+
 
 
 ### Build and Run the Experiments (Visual Studio)
@@ -53,7 +55,6 @@ This repo contains sample lab-projects for the Course - ["AI, Machine and DeepLe
  4. Select/Open relevant Java-file (i.e. Main.java).
  
  5. Run selected Java-programm (i.e. via Menu 'Run > Run' or Ctrl+F11)
-
 
 ## Developer Code of Conduct
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/).
