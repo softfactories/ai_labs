@@ -20,6 +20,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Java", "Java", "{A666BB1C-3F5E-42CD-9362-4AF2E1FE765C}"
+	ProjectSection(SolutionItems) = preProject
+		PictureAnalyzerJava\src\sf\services\cognitive\vision\Main.java = PictureAnalyzerJava\src\sf\services\cognitive\vision\Main.java
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +51,7 @@ Global
 		{C93B62BE-1E1D-4EB5-947F-D639D84C8C25} = {22A5EE50-0F5A-4772-B94E-A9B3371C6C03}
 		{FD346A52-088E-4E88-AC1E-19C8B15389FE} = {C93B62BE-1E1D-4EB5-947F-D639D84C8C25}
 		{1575B446-9CCB-4419-968F-EAB213784B18} = {FCC7047B-2672-4CB3-B970-0236C683F9FE}
+		{A666BB1C-3F5E-42CD-9362-4AF2E1FE765C} = {22A5EE50-0F5A-4772-B94E-A9B3371C6C03}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FB83572D-D13C-435F-9BF6-DD6DF2F26FBB}
