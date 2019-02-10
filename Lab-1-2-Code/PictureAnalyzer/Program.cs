@@ -12,7 +12,6 @@ namespace sf.services.cognitive.vision
         // TODO: (1) IMPORTANT! Replace <API-Key> with your valid subscription key.
         const string subscriptionKey = "<API-Key>";
 
-
         const string uriCommon = ".api.cognitive.microsoft.com";
         const string uriVisionAnalyzeSuffix = "/vision/v2.0/analyze";
 
