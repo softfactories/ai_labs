@@ -20,7 +20,7 @@ def FindUrl(string):
 
 # You must use the same region in your REST call as you used to get your
 # subscription keys. For example, if you got your subscription keys from
-# East US, replace "westcentralus" in the URI below with "eastus".
+# East US, replace "westcentralus" in the azureRegion-Variable below with "eastus".
 #
 # Free trial subscription keys are generated in the "westcentralus" region.
 # If you use a free trial subscription key, you shouldn't need to change

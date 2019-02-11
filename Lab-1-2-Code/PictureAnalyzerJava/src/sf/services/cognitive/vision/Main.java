@@ -25,7 +25,7 @@ public class Main {
 
     // You must use the same Azure region in your REST API method as you used to
     // get your subscription keys. For example, if you got your subscription keys
-    // from the East US region, replace "westcentralus" in the URL
+    // from the East US region, replace "westcentralus" in the uriAzureRegion-Variable
     // below with "eastus".
     //
     // Free trial subscription keys are generated in the "westus" region.
