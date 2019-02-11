@@ -12,20 +12,21 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 public class Main {
-	// **********************************************
-    // *** Update or verify the following values. ***
-    // **********************************************
+	// *******************************************************************************************
+    // *** Analyze remote pictures with REST-API for Computer Vision of the Cognitive Services ***
+    // *******************************************************************************************
 
     // TODO: (1) IMPORTANT! Replace <API-Key> with your valid subscription key.
     private static final String subscriptionKey = "<API-Key>";
 
 
-    private static final String uriCommon = ".api.cognitive.microsoft.com";
-    private static final String uriVisionAnalyzeSuffix = "/vision/v2.0/analyze";
+    private static final String urlCommon = ".api.cognitive.microsoft.com";
+    private static final String urlVisionCommon = "/vision/v2.0/";
+    private static final String urlVisionAnalyze = "analyze";
 
     // You must use the same Azure region in your REST API method as you used to
     // get your subscription keys. For example, if you got your subscription keys
-    // from the East US region, replace "westcentralus" in the uriAzureRegion-Variable
+    // from the East US region, replace "westcentralus" in the urlAzureRegion-Variable
     // below with "eastus".
     //
     // Free trial subscription keys are generated in the "westus" region.
@@ -33,11 +34,11 @@ public class Main {
     // this region.
     
     // TODO: (2) assign actual azure region here:
-    private static final String uriAzureRegion = "westcentralus"; 
-    // private static final String uriAzureRegion = "eastus";
+    private static final String urlAzureRegion = "westcentralus"; 
+    // private static final String urlAzureRegion = "eastus";
     // ... etc.
 
-    private static final String uriBase = "https://" + uriAzureRegion + uriCommon + uriVisionAnalyzeSuffix;
+    private static final String urlBase = "https://" + urlAzureRegion + urlCommon + urlVisionCommon + urlVisionAnalyze;
     
     // TODO: (3) assign image URL here:
     private static final String imageToAnalyze =
@@ -50,15 +51,15 @@ public class Main {
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
 
         try {
-            URIBuilder builder = new URIBuilder(uriBase);
+            URIBuilder builder = new URIBuilder(urlBase);
 
             // Request parameters. All of them are optional.
             builder.setParameter("visualFeatures", "Categories,Description,Color");
             builder.setParameter("language", "en");
 
-            // Prepare the URI for the REST API method.
-            URI uri = builder.build();
-            HttpPost request = new HttpPost(uri);
+            // Prepare the url for the REST API method.
+            URI url = builder.build();
+            HttpPost request = new HttpPost(url);
 
             // Request headers.
             request.setHeader("Content-Type", "application/json");

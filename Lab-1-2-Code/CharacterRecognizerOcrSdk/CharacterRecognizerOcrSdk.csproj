@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1575B446-9CCB-4419-968F-EAB213784B18}</ProjectGuid>
+    <ProjectGuid>{F017A23D-1134-4A30-8F8B-C0CE46F0AD91}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>sf.services.cognitive.vision.analyze</RootNamespace>
-    <AssemblyName>PictureAnalyzerSdk</AssemblyName>
+    <RootNamespace>sf.services.cognitive.vision.ocr</RootNamespace>
+    <AssemblyName>CharacterRecognizerOcrSdk</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

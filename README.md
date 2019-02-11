@@ -22,7 +22,7 @@ This repo contains sample lab-projects for the Course - ["AI, Machine and DeepLe
 
    You must use the same region in your REST call as you used to get your
    subscription keys. For example, if you got your subscription keys from
-   East US, replace "westcentralus" in the URI below with "eastus".
+   East US, replace "westcentralus" with "eastus".
 
    Free trial subscription keys are generated in the "westcentralus" region.
    If you use a free trial subscription key, you shouldn't need to change

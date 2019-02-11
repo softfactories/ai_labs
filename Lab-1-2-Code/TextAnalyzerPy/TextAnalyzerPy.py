@@ -1,4 +1,5 @@
-# Analyse Text 
+# This program analyze the given text for language, sentiments, keyphrases and entities 
+# with REST-API for Text Analyzer of the Cognitive Services
 
 import requests
 from pprint import pprint

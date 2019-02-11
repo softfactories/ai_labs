@@ -1,24 +1,25 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
+using System.Threading.Tasks;
+
+using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
 
-namespace sf.services.cognitive.vision.analyze
+namespace sf.services.cognitive.vision.ocr
 {
     /// <summary>
-    /// This program does analyze the local pictures 
+    /// This program does recognize printed text in the local pictures 
     /// with REST-API for Computer Vision of the Cognitive Services
     /// </summary>
-    static class Program
+    class Program
     {
         // TODO: (1) IMPORTANT! Replace <API-Key> with your valid subscription key.
         const string subscriptionKey = "<API-Key>";
 
         const string urlCommon = ".api.cognitive.microsoft.com";
         const string urlVisionCommon = "/vision/v2.0/";
-        const string urlVisionAnalyze = "analyze";
+        const string urlVisionOcr = "ocr";
 
         // You must use the same Azure region in your REST API method as you used to
         // get your subscription keys. For example, if you got your subscription keys
@@ -34,36 +35,35 @@ namespace sf.services.cognitive.vision.analyze
         // const string urlAzureRegion = "eastus";
         // ... etc.
 
-        const string urlBase = "https://" + urlAzureRegion + urlCommon + urlVisionCommon + urlVisionAnalyze;
+        const string urlBase = "https://" + urlAzureRegion + urlCommon + urlVisionCommon + urlVisionOcr;
 
         static void Main()
         {
             // Get the path and filename to process from the user.
-            Console.WriteLine("Analyze an image:");
-            Console.Write(
-                "Enter the path to the image you wish to analyze: ");
+            Console.WriteLine("Optical Character Recognition:");
+            Console.Write("Enter the path to an image with text you wish to read: ");
             string imageFilePath = Console.ReadLine();
 
             if (File.Exists(imageFilePath))
             {
-                // Call the REST API method.
-                Console.WriteLine("\nWait a moment for the results to appear.\n");
-                MakeAnalysisRequest(imageFilePath).Wait();
+                // Call the REST API method for local file.
+                Console.WriteLine("\nWait a moment for the results to appear. (Local)\n");
+                MakeOCRRequest(imageFilePath).Wait();
             }
             else
             {
-                Console.WriteLine("\nInvalid file path");
+                Console.WriteLine("\nInvalid file path or URL");
             }
             Console.WriteLine("\nPress Enter to exit...");
             Console.ReadLine();
         }
 
         /// <summary>
-        /// Gets the analysis of the specified image file by using
+        /// Gets the text visible in the specified image file by using
         /// the Computer Vision REST API.
         /// </summary>
-        /// <param name="imageFilePath">The image file to analyze.</param>
-        static async Task MakeAnalysisRequest(string imageFilePath)
+        /// <param name="imageFilePath">The image file with printed text.</param>
+        static async Task MakeOCRRequest(string imageFilePath)
         {
             try
             {
@@ -73,20 +73,15 @@ namespace sf.services.cognitive.vision.analyze
                 client.DefaultRequestHeaders.Add(
                     "Ocp-Apim-Subscription-Key", subscriptionKey);
 
-                // Request parameters. A third optional parameter is "details".
-                // The Analyze Image method returns information about the following
-                // visual features:
-                // Categories:  categorizes image content according to a
-                //              taxonomy defined in documentation.
-                // Description: describes the image content with a complete
-                //              sentence in supported languages.
-                // Color:       determines the accent color, dominant color, 
-                //              and whether an image is black & white.
-                string requestParameters =
-                    "visualFeatures=Categories,Description,Color,Adult";
+                // Request parameters. 
+                // The language parameter doesn't specify a language, so the 
+                // method detects it automatically.
+                // The detectOrientation parameter is set to true, so the method detects and
+                // and corrects text orientation before detecting text.
+                string requestParameters = "language=unk&detectOrientation=true";
 
-                // Assemble the url for the REST API method.
-                string url = urlBase + "?" + requestParameters;
+                // Assemble the URI for the REST API method.
+                string urlRequest = urlBase + "?" + requestParameters;
 
                 HttpResponseMessage response;
 
@@ -104,7 +99,7 @@ namespace sf.services.cognitive.vision.analyze
                         new MediaTypeHeaderValue("application/octet-stream");
 
                     // Asynchronously call the REST API method.
-                    response = await client.PostAsync(url, content);
+                    response = await client.PostAsync(urlRequest, content);
                 }
 
                 // Asynchronously get the JSON response.

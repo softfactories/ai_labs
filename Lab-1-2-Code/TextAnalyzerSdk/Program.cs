@@ -14,6 +14,10 @@ using Microsoft.Azure.CognitiveServices.Language.TextAnalytics.Models;
 
 namespace sf.services.cognitive.text
 {
+    /// <summary>
+    /// This program analyze the given text for language, sentiments, keyphrases and entities 
+    /// with .NET SDK for Text Analyzer of the Cognitive Services
+    /// </summary>
     class Program
     {
         // TODO: (1) IMPORTANT! Replace <API-Key> with your valid subscription key.
@@ -21,18 +25,18 @@ namespace sf.services.cognitive.text
 
         // You must use the same Azure region in your REST API method as you used to
         // get your subscription keys. For example, if you got your subscription keys 
-        // from the West Europe, replace "westcentralus" in the uriAzureRegion-Variable
+        // from the West Europe, replace "westcentralus" in the urlAzureRegion-Variable
         // below with "westeurope".
         //
         // Free trial subscription keys are generated in the "westcentralus" region.
         // If you use a free trial subscription key, you shouldn't need to change
         // this region.
-        const string uriCommon = ".api.cognitive.microsoft.com";
+        const string urlCommon = ".api.cognitive.microsoft.com";
         // TODO: (2) assign actual azure region here:
-        const string uriAzureRegion = "westcentralus";
-        //const string uriAzureRegion = "westeurope";
+        const string urlAzureRegion = "westcentralus";
+        // const string urlAzureRegion = "westeurope";
         // ... etc.
-        const string urlEndpoint = "https://" + uriAzureRegion + uriCommon;
+        const string urlEndpoint = "https://" + urlAzureRegion + urlCommon;
 
         class ApiKeyServiceClientCredentials : ServiceClientCredentials
         {

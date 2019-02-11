@@ -5,27 +5,31 @@ using System.Threading.Tasks;
 using Microsoft.Azure.CognitiveServices.Vision.ComputerVision;
 using Microsoft.Azure.CognitiveServices.Vision.ComputerVision.Models;
 
-namespace sf.services.cognitive.vision
+namespace sf.services.cognitive.vision.analyze
 {
+    /// <summary>
+    /// This program does analyze the local and remote pictures 
+    /// with .NET SDK for Computer Vision of the Cognitive Services
+    /// </summary>
     class Program
     {
         // TODO: (1) IMPORTANT! Replace <API-Key> with your valid subscription key.
-        const string subscriptionKey = "<API-KEY>";
+        const string subscriptionKey = "<API-Key>";
 
         // You must use the same Azure region in your REST API method as you used to
         // get your subscription keys. For example, if you got your subscription keys
-        // from the East US region, replace "westcentralus" in the uriAzureRegion-Variable
+        // from the East US region, replace "westcentralus" in the urlAzureRegion-Variable
         // below with "eastus".
         //
         // Free trial subscription keys are generated in the "westcentralus" region.
         // If you use a free trial subscription key, you shouldn't need to change
         // this region.
-        const string uriCommon = ".api.cognitive.microsoft.com";
+        const string urlCommon = ".api.cognitive.microsoft.com";
         // TODO: (2) assign actual azure region here:
-        const string uriAzureRegion = "westcentralus";
-        // const string uriAzureRegion = "eastus";
+        const string urlAzureRegion = "westcentralus";
+        // const string urlAzureRegion = "eastus";
         // ... etc.
-        const string urlEndpoint = "https://" + uriAzureRegion + uriCommon;
+        const string urlEndpoint = "https://" + urlAzureRegion + urlCommon;
 
       // Specify the features to return
     private static readonly List<VisualFeatureTypes> features =
@@ -103,9 +107,9 @@ namespace sf.services.cognitive.vision
     }
 
     // Display the most relevant caption for the image
-    private static void DisplayResults(ImageAnalysis analysis, string imageUri)
+    private static void DisplayResults(ImageAnalysis analysis, string imageurl)
     {
-        Console.WriteLine(String.Format("\nAnalyzed image source: {0}",imageUri));        
+        Console.WriteLine(String.Format("\nAnalyzed image source: {0}",imageurl));        
         Console.WriteLine(String.Format("\nImage recognition description: {0}", analysis.Description.Captions[0].Text));
         Console.WriteLine(String.Format(
                 "\nIs adult content: \"{0}\". Adult-score: {1}",

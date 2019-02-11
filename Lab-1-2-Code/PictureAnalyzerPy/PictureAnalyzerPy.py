@@ -1,4 +1,5 @@
-# Analyse local file
+# This program does analyze the local and remote pictures 
+# with REST-API for Computer Vision of the Cognitive Services
 
 import requests
 # If you are using a Jupyter notebook, uncomment the following line.
