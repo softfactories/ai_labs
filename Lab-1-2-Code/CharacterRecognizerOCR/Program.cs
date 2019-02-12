@@ -53,7 +53,7 @@ namespace sf.services.cognitive.vision.ocr
             }
             else if (Uri.IsWellFormedUriString(imageFilePath, UriKind.Absolute))
             {
-                // Call the REST API method for local file.
+                // Call the REST API method for remote file.
                 MakeOCRRequest(imageFilePath, true).Wait();
             }
             else
