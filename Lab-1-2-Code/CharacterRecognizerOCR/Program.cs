@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Text;
 
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Net.Http;
@@ -9,7 +11,7 @@ using System.Net.Http.Headers;
 namespace sf.services.cognitive.vision.ocr
 {
     /// <summary>
-    /// This program does recognize printed text in the local pictures 
+    /// This program does recognize printed text in the local or remote (on the Web) pictures 
     /// with REST-API for Computer Vision of the Cognitive Services
     /// </summary>
     class Program
@@ -41,14 +43,18 @@ namespace sf.services.cognitive.vision.ocr
         {
             // Get the path and filename to process from the user.
             Console.WriteLine("Optical Character Recognition:");
-            Console.Write("Enter the path to an image with text you wish to read: ");
+            Console.Write("Enter the local path or Web-Address (URL) to an image with text you wish to read: ");
             string imageFilePath = Console.ReadLine();
 
             if (File.Exists(imageFilePath))
             {
                 // Call the REST API method for local file.
-                Console.WriteLine("\nWait a moment for the results to appear. (Local)\n");
-                MakeOCRRequest(imageFilePath).Wait();
+                MakeOCRRequest(imageFilePath, false).Wait();
+            }
+            else if (Uri.IsWellFormedUriString(imageFilePath, UriKind.Absolute))
+            {
+                // Call the REST API method for local file.
+                MakeOCRRequest(imageFilePath, true).Wait();
             }
             else
             {
@@ -63,7 +69,7 @@ namespace sf.services.cognitive.vision.ocr
         /// the Computer Vision REST API.
         /// </summary>
         /// <param name="imageFilePath">The image file with printed text.</param>
-        static async Task MakeOCRRequest(string imageFilePath)
+        static async Task MakeOCRRequest(string imageFilePath, bool isUrl)
         {
             try
             {
@@ -85,21 +91,34 @@ namespace sf.services.cognitive.vision.ocr
 
                 HttpResponseMessage response;
 
-                // Read the contents of the specified local image
-                // into a byte array.
-                byte[] byteData = GetImageAsByteArray(imageFilePath);
+                if (isUrl)
+                {   
+                    var jsonString = JsonConvert.SerializeObject(new { url = imageFilePath });
+                    var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
-                // Add the byte array as an octet stream to the request body.
-                using (ByteArrayContent content = new ByteArrayContent(byteData))
-                {
-                    // This example uses the "application/octet-stream" content type.
-                    // The other content types you can use are "application/json"
-                    // and "multipart/form-data".
-                    content.Headers.ContentType =
-                        new MediaTypeHeaderValue("application/octet-stream");
+                    // This example uses the "application/json" content type.
+                    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
+                    Console.WriteLine("\nWait a moment for the results to appear. (Remote)\n");
                     // Asynchronously call the REST API method.
                     response = await client.PostAsync(urlRequest, content);
+                }
+                else
+                {
+                    // Read the contents of the specified local image
+                    // into a byte array.
+                    byte[] byteData = GetImageAsByteArray(imageFilePath);
+
+                    // Add the byte array as an octet stream to the request body.
+                    using (ByteArrayContent content = new ByteArrayContent(byteData))
+                    {
+                        // This example uses the "application/octet-stream" content type.
+                        content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+
+                        Console.WriteLine("\nWait a moment for the results to appear. (Local)\n");
+                        // Asynchronously call the REST API method.
+                        response = await client.PostAsync(urlRequest, content);
+                    }
                 }
 
                 // Asynchronously get the JSON response.
