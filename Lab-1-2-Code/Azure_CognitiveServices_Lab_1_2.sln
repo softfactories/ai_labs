@@ -39,6 +39,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterRecognizerOcr", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterRecognizerOcrSdk", "CharacterRecognizerOcrSdk\CharacterRecognizerOcrSdk.csproj", "{F017A23D-1134-4A30-8F8B-C0CE46F0AD91}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lab-1-2Code", "Lab-1-2Code", "{1B59A100-6508-4BC3-AAC4-D11737F0792A}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +91,7 @@ Global
 		{45AE380C-D3DB-4C0F-BAF3-72E3D7E990DD} = {25409F12-D774-4D83-A6EC-0FE092B65795}
 		{95D04632-B7EE-4FE4-9F09-F8D9656818B3} = {FCC7047B-2672-4CB3-B970-0236C683F9FE}
 		{F017A23D-1134-4A30-8F8B-C0CE46F0AD91} = {FCC7047B-2672-4CB3-B970-0236C683F9FE}
+		{1B59A100-6508-4BC3-AAC4-D11737F0792A} = {02B26B0E-D316-4DA4-AD31-39A42250F135}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FB83572D-D13C-435F-9BF6-DD6DF2F26FBB}
