@@ -1,5 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Text;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 namespace sf.services.cognitive.vision.analyze
 {
     /// <summary>
-    /// This program does analyze the local pictures 
+    /// This program does analyze the local or remote (from the Web) pictures 
     /// with REST-API for Computer Vision of the Cognitive Services
     /// </summary>
     static class Program
@@ -41,14 +43,18 @@ namespace sf.services.cognitive.vision.analyze
             // Get the path and filename to process from the user.
             Console.WriteLine("Analyze an image:");
             Console.Write(
-                "Enter the path to the image you wish to analyze: ");
+                "Enter the local path or Web-Address (URL) of the image you wish to analyze: ");
             string imageFilePath = Console.ReadLine();
 
             if (File.Exists(imageFilePath))
             {
                 // Call the REST API method.
-                Console.WriteLine("\nWait a moment for the results to appear.\n");
-                MakeAnalysisRequest(imageFilePath).Wait();
+                MakeAnalysisRequest(imageFilePath, false).Wait();
+            }
+            else if (Uri.IsWellFormedUriString(imageFilePath, UriKind.Absolute))
+            {
+                // Call the REST API method for remote file.
+                MakeAnalysisRequest(imageFilePath, true).Wait();
             }
             else
             {
@@ -63,7 +69,7 @@ namespace sf.services.cognitive.vision.analyze
         /// the Computer Vision REST API.
         /// </summary>
         /// <param name="imageFilePath">The image file to analyze.</param>
-        static async Task MakeAnalysisRequest(string imageFilePath)
+        static async Task MakeAnalysisRequest(string imageFilePath, bool isUrl)
         {
             try
             {
@@ -86,25 +92,39 @@ namespace sf.services.cognitive.vision.analyze
                     "visualFeatures=Categories,Description,Color,Adult";
 
                 // Assemble the url for the REST API method.
-                string url = urlBase + "?" + requestParameters;
+                string urlRequest = urlBase + "?" + requestParameters;
 
                 HttpResponseMessage response;
 
-                // Read the contents of the specified local image
-                // into a byte array.
-                byte[] byteData = GetImageAsByteArray(imageFilePath);
-
-                // Add the byte array as an octet stream to the request body.
-                using (ByteArrayContent content = new ByteArrayContent(byteData))
+                if (isUrl)
                 {
-                    // This example uses the "application/octet-stream" content type.
-                    // The other content types you can use are "application/json"
-                    // and "multipart/form-data".
-                    content.Headers.ContentType =
-                        new MediaTypeHeaderValue("application/octet-stream");
+                    var jsonString = JsonConvert.SerializeObject(new { url = imageFilePath });
+                    var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
+                    // This example uses the "application/json" content type.
+                    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    Console.WriteLine("\nWait a moment for the results to appear. (Remote)\n");
                     // Asynchronously call the REST API method.
-                    response = await client.PostAsync(url, content);
+                    response = await client.PostAsync(urlRequest, content);
+                }
+                else
+                {
+                    // Read the contents of the specified local image
+                    // into a byte array.
+                    byte[] byteData = GetImageAsByteArray(imageFilePath);
+
+                    // Add the byte array as an octet stream to the request body.
+                    using (ByteArrayContent content = new ByteArrayContent(byteData))
+                    {
+                        // This example uses the "application/octet-stream" content type.
+                        content.Headers.ContentType =
+                            new MediaTypeHeaderValue("application/octet-stream");
+
+                        Console.WriteLine("\nWait a moment for the results to appear. (Local)\n");
+                        // Asynchronously call the REST API method.
+                        response = await client.PostAsync(urlRequest, content);
+                    }
                 }
 
                 // Asynchronously get the JSON response.
