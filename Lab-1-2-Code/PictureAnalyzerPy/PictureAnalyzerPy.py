@@ -1,3 +1,5 @@
+# coding=utf-8
+
 # This program does analyze the local and remote pictures 
 # with REST-API for Computer Vision of the Cognitive Services
 

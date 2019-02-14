@@ -1,3 +1,5 @@
+# coding=utf-8
+
 # This program analyze the given text for language, sentiments, keyphrases and entities 
 # with REST-API for Text Analyzer of the Cognitive Services
 import TextAnalyzerEx as experiments
