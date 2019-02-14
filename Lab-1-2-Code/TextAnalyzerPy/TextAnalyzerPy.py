@@ -3,7 +3,7 @@
 import TextAnalyzerEx as experiments
 
 # TODO: (1) Replace <Subscription Key> (aka API-KEY) with your valid subscription key.
-subscription_key = "770ed768436e454094ed5da553a33a8f"
+subscription_key = "<Subscription Key>"
 assert subscription_key
 headers = {'Ocp-Apim-Subscription-Key': subscription_key }
 
@@ -16,8 +16,8 @@ headers = {'Ocp-Apim-Subscription-Key': subscription_key }
 # this region.
 
 # TODO: (2) assign actual azure region here:
-# azureRegion = "westcentralus"
-azureRegion = "westeurope" 
+azureRegion = "westcentralus"
+# azureRegion = "westeurope" 
 # ... etc.
 text_base_url = "https://" + azureRegion + ".api.cognitive.microsoft.com/text/analytics/v2.0/"
 
