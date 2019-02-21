@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comprehend_Sdk", "Comprehend_Sdk\Comprehend_Sdk.csproj", "{76A8D84A-731B-4752-8D74-538F6B6F69A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Language", "Language", "{0F926E71-4D67-4E8B-822C-818B50B4E6EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vision", "Vision", "{D731C71B-E63F-4651-868A-544C6BF76FDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageLabel_Sdk", "ImageLabel_Sdk\ImageLabel_Sdk.csproj", "{DB8D742A-745A-47A2-B2A9-86990E7FCA4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageLabel_CLI", "ImageLabel_CLI\ImageLabel_CLI.csproj", "{68BA3B40-F53D-4647-9F04-583914567A79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisionUtils", "VisionUtils\VisionUtils.csproj", "{37F7C0C0-D1E8-43A6-8048-0233EF535958}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ImageLabel_Python", "ImageLabel_Python\ImageLabel_Python.pyproj", "{587A9D7A-BF99-4EDC-A7AF-E9FADF49795E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76A8D84A-731B-4752-8D74-538F6B6F69A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76A8D84A-731B-4752-8D74-538F6B6F69A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76A8D84A-731B-4752-8D74-538F6B6F69A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76A8D84A-731B-4752-8D74-538F6B6F69A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB8D742A-745A-47A2-B2A9-86990E7FCA4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB8D742A-745A-47A2-B2A9-86990E7FCA4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB8D742A-745A-47A2-B2A9-86990E7FCA4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB8D742A-745A-47A2-B2A9-86990E7FCA4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68BA3B40-F53D-4647-9F04-583914567A79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68BA3B40-F53D-4647-9F04-583914567A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68BA3B40-F53D-4647-9F04-583914567A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68BA3B40-F53D-4647-9F04-583914567A79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37F7C0C0-D1E8-43A6-8048-0233EF535958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37F7C0C0-D1E8-43A6-8048-0233EF535958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37F7C0C0-D1E8-43A6-8048-0233EF535958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37F7C0C0-D1E8-43A6-8048-0233EF535958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{587A9D7A-BF99-4EDC-A7AF-E9FADF49795E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{587A9D7A-BF99-4EDC-A7AF-E9FADF49795E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{76A8D84A-731B-4752-8D74-538F6B6F69A2} = {0F926E71-4D67-4E8B-822C-818B50B4E6EA}
+		{DB8D742A-745A-47A2-B2A9-86990E7FCA4C} = {D731C71B-E63F-4651-868A-544C6BF76FDE}
+		{68BA3B40-F53D-4647-9F04-583914567A79} = {D731C71B-E63F-4651-868A-544C6BF76FDE}
+		{37F7C0C0-D1E8-43A6-8048-0233EF535958} = {D731C71B-E63F-4651-868A-544C6BF76FDE}
+		{587A9D7A-BF99-4EDC-A7AF-E9FADF49795E} = {D731C71B-E63F-4651-868A-544C6BF76FDE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04515AF7-4E5F-4B68-90CE-5D4082599F11}
+	EndGlobalSection
+EndGlobal
