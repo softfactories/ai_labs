@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using sf.vision.utils;
 
 using Amazon.Comprehend;
 using Amazon.Comprehend.Model;
@@ -13,7 +14,7 @@ namespace Comprehend_Sdk
     {
         static void Main(string[] args)
         {
-            String text = "It is raining today in Seattle";
+            String text = ExtFunc.Read("Input a text to Sentiment-Analysation i.E \"It is raining today in Seattle.\"");
 
             AmazonComprehendClient comprehendClient = new AmazonComprehendClient(
                 Amazon.RegionEndpoint.USEast1);
