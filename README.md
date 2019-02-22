@@ -32,7 +32,7 @@ This repo contains sample lab-projects for the Course - ["AI, Machine and DeepLe
 
 ## Lab 2 - AWS Machine Learning
 
-###Amazon ML Documentation Examples
+### Amazon ML Documentation Examples
 ==============================================
 
 Prerequisites
