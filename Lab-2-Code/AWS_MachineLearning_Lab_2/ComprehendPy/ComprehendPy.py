@@ -3,7 +3,7 @@ import json
 
 comprehend = boto3.client(service_name='comprehend', region_name='us-east-1')
                 
-text = "It is raining today in Hannover und Umgebung."
+text = "It is raining today in Hannover and nearest cities."
 
 print('Calling DetectSentiment')
 print(json.dumps(comprehend.detect_sentiment(Text=text, LanguageCode='en'), sort_keys=True, indent=4))
