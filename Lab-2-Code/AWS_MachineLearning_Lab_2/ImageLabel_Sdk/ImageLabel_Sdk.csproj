@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DB8D742A-745A-47A2-B2A9-86990E7FCA4C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ImageLabel_Sdk</RootNamespace>
+    <RootNamespace>sf.ml.ImageLabel_Sdk</RootNamespace>
     <AssemblyName>ImageLabel_Sdk</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -18,7 +18,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -63,9 +63,9 @@
     <Analyzer Include="..\packages\AWSSDK.S3.3.3.31.19\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VisionUtils\VisionUtils.csproj">
+    <ProjectReference Include="..\MLUtils\MLUtils.csproj">
       <Project>{37f7c0c0-d1e8-43a6-8048-0233ef535958}</Project>
-      <Name>VisionUtils</Name>
+      <Name>MLUtils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,9 +5,9 @@ using Amazon.Rekognition;
 using Amazon.Rekognition.Model;
 using Amazon.S3;
 using Amazon.S3.Model;
-using sf.vision.utils;
+using sf.utils.text;
 
-namespace ImageLabel_Sdk
+namespace sf.ml.ImageLabel_Sdk
 {
     class Program
     {

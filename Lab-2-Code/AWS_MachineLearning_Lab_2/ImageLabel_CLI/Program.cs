@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using sf.vision.utils;
+using sf.utils.text;
 using System.Diagnostics;
 
 namespace ImageLabel_CLI

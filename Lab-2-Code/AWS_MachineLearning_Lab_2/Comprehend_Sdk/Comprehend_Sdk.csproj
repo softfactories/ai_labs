@@ -61,9 +61,9 @@
     <Analyzer Include="..\packages\AWSSDK.Comprehend.3.3.6.15\analyzers\dotnet\cs\AWSSDK.Comprehend.CodeAnalysis.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VisionUtils\VisionUtils.csproj">
+    <ProjectReference Include="..\MLUtils\MLUtils.csproj">
       <Project>{37f7c0c0-d1e8-43a6-8048-0233ef535958}</Project>
-      <Name>VisionUtils</Name>
+      <Name>MLUtils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

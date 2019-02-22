@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sf.vision.utils
+namespace sf.utils.text
 {
     public static class ExtFunc
     {
