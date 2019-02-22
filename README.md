@@ -56,6 +56,7 @@ Open the solution corresponding to the service for which you wish to run example
 Compile and run the solution.
 
 An IAM user with the following IAM permissions can call every example:
+
 * AmazonRekognitionFullAccess
 * ComprehendFullAccess
 * AmazonS3ReadOnlyAccess
