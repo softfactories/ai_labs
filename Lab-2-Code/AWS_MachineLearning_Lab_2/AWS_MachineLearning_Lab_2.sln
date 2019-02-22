@@ -23,6 +23,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLUtils", "MLUtils\MLUtils.
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ComprehendPy", "ComprehendPy\ComprehendPy.pyproj", "{92B1F974-F2BB-45A8-AE2D-BDA61E72772A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AE24D20D-E9BA-4657-95FB-687CEDCB174B}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
