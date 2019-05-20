@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ee62d09e-587c-4a89-b516-b4bef4515f3d</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>TextAnalyzerPy.py</StartupFile>
+    <StartupFile>WatsonTextAnalyzer.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,9 @@
   <ItemGroup>
     <Compile Include="TextAnalyzerEx.py" />
     <Compile Include="TextAnalyzerPy.py" />
+    <Compile Include="WatsonTextAnalyzer.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
